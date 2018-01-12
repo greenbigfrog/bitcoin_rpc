@@ -16,7 +16,7 @@ class BitcoinRpc
   end
 
   macro method_missing(call)
-    command = {{call.name.id.stringify}}
+    command = {{call.name.id.stringify.gsub /_/, "" }}
     {% if call.args.size == 0 %}
       rpc_request(command)
     {% else %}
