@@ -23,11 +23,20 @@ require "bitcoin_rpc"
 
 # Testnet example
 rpc = BitcoinRpc.new("http://localhost:18332", "username", "password")
+
 rpc.getblockhash(0)
+# or
+rpc.get_block_hash(0)
 #=> "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"
+
 rpc.getblockcount
+#or 
+rpc.get_block_count
 #=> 486259
+
 rpc.listaccounts
+# or
+rpc.list_accounts
 #=> {"" => 0.0}
 ```
 
