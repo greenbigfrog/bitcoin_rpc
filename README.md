@@ -40,6 +40,11 @@ rpc.list_accounts
 #=> {"" => 0.0}
 ```
 
+## Releases
+
+# v2.0.0
+- BitcoinRpc is finally thread safe (was unaware that client.post wasn't concurrrent)
+
 ## Contributing
 
 1. Fork it ( https://github.com/citizen428/bitcoin_rpc/fork )

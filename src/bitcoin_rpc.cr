@@ -5,18 +5,15 @@ require "uri"
 require "./bitcoin_rpc/*"
 
 class BitcoinRpc
-  getter :client
-  private getter :headers
-
   def initialize(uri : String, username : String, password : String)
-    url = URI.parse(uri)
+    @url = URI.parse(uri)
     @headers = HTTP::Headers{"Content-Type" => "application/json"}
-    @client = HTTP::Client.new(url)
-    @client.basic_auth(username, password)
+    @username = username
+    @password = password
   end
 
   macro method_missing(call)
-    command = {{call.name.id.stringify.gsub /_/, "" }}
+    command = {{call.name.id.stringify.gsub /_/, ""}}
     {% if call.args.size == 0 %}
       rpc_request(command)
     {% else %}
@@ -26,12 +23,15 @@ class BitcoinRpc
 
   private def rpc_request(command, params = [] of String)
     body = {
-      :jsonrpc => "1.0",
-      :method  => command,
-      :params  => params,
+      :method => command,
+      :params => params,
     }.to_json
 
-    response = client.post("/", headers: headers, body: body)
+    client = HTTP::Client.new(@url)
+    client.basic_auth(@username, @password)
+
+    response = client.post("/", headers: @headers, body: body)
+
     parse_response(response)
   end
 
