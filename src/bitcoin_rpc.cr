@@ -32,6 +32,7 @@ class BitcoinRpc
 
     response = client.post("/", headers: @headers, body: body)
 
+    client.close
     parse_response(response)
   end
 
