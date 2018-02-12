@@ -37,7 +37,7 @@ class BitcoinRpc
   end
 
   private def parse_response(response : HTTP::Client::Response)
-    return {"error" => response.status_message} unless response.success?
+    raise response.status_message unless response.success?
     payload = JSON.parse(response.body).as_h
     return {"error" => payload["error"]} if payload["error"]
     payload["result"]
