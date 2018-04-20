@@ -42,9 +42,11 @@ rpc.list_accounts
 
 ## Releases
 
-# v2.0.1
-- Close HTTP Client, causing issues when spam called
-# v2.0.0
+# v0.3.1
+- Now raising with actual error message
+# v0.2.1
+- Close HTTP Client, causing issues when called with higher rate
+# v0.2.0
 - BitcoinRpc is finally thread safe (was unaware that client.post wasn't concurrrent)
 
 ## Contributing
