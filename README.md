@@ -43,7 +43,7 @@ rpc.list_accounts
 ## Releases
 
 # v0.3.1
-- Now raising with actual error message
+- Raise actual error message
 # v0.2.1
 - Close HTTP Client, causing issues when called with higher rate
 # v0.2.0
