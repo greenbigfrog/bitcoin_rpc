@@ -51,7 +51,7 @@ class BitcoinRpc
     #   JSON.parse(msg)["code"] == -6 # -6 == Insufficient Funds
     # end
     # ```
-    raise payload["error"].to_json if payload["error"]
+    raise payload["error"].to_json if payload["error"].as_nil
 
     payload["result"]
   end

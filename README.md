@@ -42,6 +42,8 @@ rpc.list_accounts
 
 ## Releases
 
+# v0.3.2
+- Make compatible with new crystal release 0.25.0
 # v0.3.1
 - Raise actual error message
 # v0.2.1
