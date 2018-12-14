@@ -33,6 +33,9 @@ class BitcoinRpc
     response = client.post("/", headers: @headers, body: body)
 
     client.close
+
+    raise "Error in RPC: #{response.status_code} #{response.status_message}" unless response.success?
+
     parse_response(response)
   end
 
