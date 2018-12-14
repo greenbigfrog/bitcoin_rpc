@@ -42,6 +42,8 @@ rpc.list_accounts
 
 ## Releases
 
+# v0.4.0
+- Raise error if none Success HTTP status code
 # v0.3.1
 - Now raising with actual error message
 # v0.2.1
