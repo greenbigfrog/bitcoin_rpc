@@ -34,7 +34,7 @@ class BitcoinRpc
 
     client.close
 
-    raise "Error in RPC: #{response.status_code} #{response.status_message}" unless response.success?
+    raise "Error with RPC request: #{response.status_code} #{response.status_message} (JSON Body for debugging: #{response.body})" unless response.success?
 
     parse_response(response)
   end

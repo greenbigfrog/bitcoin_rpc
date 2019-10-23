@@ -42,6 +42,8 @@ rpc.list_accounts
 
 ## Releases
 
+### v0.5.0
+- Include JSON body when raising on unseccessfull RPC request
 ### v0.4.1
 - Fix error raising logic
 ### v0.4.0
