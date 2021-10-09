@@ -1,11 +1,11 @@
 name: bitcoin_rpc
-version: 1.0.0
+version: 1.0.1
 
 authors:
   - Michael Kohl <citizen428@gmail.com>
   - greenbigfrog <greenbigfrog@gmail.com>
 
-crystal: *
+crystal: "*"
 
 license: MIT
 

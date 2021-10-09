@@ -42,6 +42,8 @@ rpc.list_accounts
 
 ## Releases
 
+### v1.0.1
+- Fix crystal requirement
 ### v1.0.0
 - change crystal version requirement to *
 ### v0.5.0
